@@ -1,10 +1,27 @@
 
-float animStep = 0;
+float animStep = -20;
+float lampStep = width+10;
 void ManEnter(){
-  if(animStep < 50){
+   animation1.display(animStep, height/2 - 60);
+   
+   if(animStep < 50){
     animStep += 0.5f;
   } 
-   animation1.display(animStep, height/2 - 50);
+  else{
+    stage = 2;
+  }
+   
+   //lamp enters
+  if(stage == 2){
+    image(lamp, lampStep , height/2 - 40, 40, 40);
+    if(lampStep > -10){
+      lampStep = lampStep - 8;
+    }
+    else {
+      lampStep = width+10;
+    }
+  }
+  
 }
 
 // Class for animating a sequence of GIFs
@@ -26,7 +43,7 @@ class Animation {
 
   void display(float xpos, float ypos) {
     frame = (frame+1) % imageCount;
-    image(images[frame], xpos, ypos, 50 ,50);
+    image(images[frame], xpos, ypos, 100 ,80);
   }
   
   int getWidth() {

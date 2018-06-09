@@ -1,14 +1,16 @@
+float step = 0;
 
 void Intro(){
   stroke(255);
   fill(0);  
   
   if(step < width+10){
-    step += 5.0f;
+    step += 8.0f;
+    
   }
   else{
      stage = 1;
-     step = 0;
+     step = width+10;
   }  
-  rect(-5+step,height/2,step,10,10); 
+  rect(-5,height/2,step,10,10);  
 }
