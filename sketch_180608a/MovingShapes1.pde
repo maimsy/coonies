@@ -1,6 +1,15 @@
 int movingShapes1Steps = width;
 void MovingShapes(){
- println("movingShapes");
+  
+  if(movingShapes1Steps < -500 && movingShapes1Steps > -1200){
+    stage = 3;
+  }
+  
+  if(movingShapes1Steps < -1200 ){
+    println("stage "+stage);
+    stage = 4;
+  }
+  
    movingShapes1Steps -= 5;
   
   //translate (x, y); //For moving the canvas
@@ -39,7 +48,7 @@ void MovingShapes(){
 
   pushMatrix();
   translate(r,0);
-  for(int t = 0; t < 1000; t += 100) {//TODO: consider changing to while loop
+  for(int t = 0; t < 2000; t += 100) {//TODO: consider changing to while loop
   pushMatrix();
   translate(-200+t, -200+t);//diamond to circle shape //rotate(-200+t);makes cool star/flower to circle transformation
  
@@ -47,7 +56,7 @@ void MovingShapes(){
   beginShape();
   stroke(255);
   for (PVector v : morph) {
-    vertex(v.x + movingShapes1Steps, v.y);
+    vertex(v.x + movingShapes1Steps, v.y+50);
   }
   fill(random(255), random(255), random(255) );
   

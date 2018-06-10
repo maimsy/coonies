@@ -9,8 +9,11 @@ void Intro(){
     
   }
   else{
-     stage = 1;
+    if(stage == 0){
+       stage = 1;
+    }
      step = width+10;
   }  
+  
   rect(-5,height/2,step,10,10);  
 }

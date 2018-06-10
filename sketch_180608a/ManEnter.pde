@@ -1,15 +1,42 @@
 
-float animStep = -20;
+float animStep = -50;
 float lampStep = width+10;
+float manEndLocation = 0;
+
+
 void ManEnter(){
-   animation1.display(animStep, height/2 - 60);
+  /*
+  if(stage == 4){
+    // Draw relative to center
+    translate(width/2, height/2);
+    // rotate around the center of the sketch
+    rotate(radians(frameCount));
+    //stage = 5;
+  }*/
+  
+   animation1.display(animStep, height/2 - 90);
+   if(stage < 3){ manEndLocation = 50; }
+   else{ 
+     manEndLocation = (width/2)-60;
+   }
    
-   if(animStep < 50){
-    animStep += 0.5f;
-  } 
-  else{
-    stage = 2;
-  }
+    if(animStep < manEndLocation){
+      animStep += 1f;
+    } 
+    /*else if(animStep >= width/2-50){
+      println(stage);
+      stage = 4;
+    }*/
+    else if(stage < 3){
+      stage = 2;
+    } 
+    else if(stage < 5){
+      stage = 4;
+    }
+    else{
+      stage = 5;
+    }
+    
    
    //lamp enters
   if(stage == 2){
@@ -21,8 +48,13 @@ void ManEnter(){
       lampStep = width+10;
     }
   }
-  
 }
+
+
+void EnterWhiteMan(){ 
+  animation2.display((width-140)-animStep, height/2 - 5);
+}
+
 
 // Class for animating a sequence of GIFs
 class Animation {
@@ -43,7 +75,7 @@ class Animation {
 
   void display(float xpos, float ypos) {
     frame = (frame+1) % imageCount;
-    image(images[frame], xpos, ypos, 100 ,80);
+    image(images[frame], xpos, ypos, 150 ,120);
   }
   
   int getWidth() {
