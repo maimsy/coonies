@@ -59,6 +59,10 @@ void setup(){
 
   
   song = minim.loadSample( "MaimunaSyed-CodeBus.wav" );  
+  drops = new drop[600];
+   for(int i =0; i< drops.length; i++){
+      drops[i] = new drop();
+  }
   
   // Runnning animation
   frameRate(24);
@@ -119,6 +123,7 @@ void setup(){
 }
 
 void draw(){ 
+ 
 
   if(stage == 0){
     Intro();
@@ -174,8 +179,6 @@ void draw(){
     background(255,215,89);
    fill(0,4,68);
    */
-     
-  
 if(rotationStep < 25){
         background(15,166,194);
    fill(255,0,31);
@@ -215,13 +218,15 @@ if(rotationStep < 25){
          translate(80, height/2 + 400);
       rotate(radians(270));
        textSize(25);
-      text("Presenting the Coonies", 10, 50); 
+      text("Presenting the Coonies", 10, 30); 
+  
       textSize(25);
        text("Music using Sonic Pi and Code using Processing", 50, 50); 
        textSize(25);
+       pour();
      }
-      else if(rotationStep > 160){
-        FallMan();
+      else if(rotationStep > 170){
+        stage = 7;
       }
      
   rect(-10,height/2,width+20, height);
