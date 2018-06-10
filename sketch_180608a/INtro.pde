@@ -12,7 +12,7 @@ void Intro(){
     if(stage == 0){
        stage = 1;
     }
-     step = width+10;
+     step = width+100;
   }  
   
   rect(-5,height/2,step,10,10);  

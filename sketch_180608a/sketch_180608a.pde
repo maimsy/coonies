@@ -24,6 +24,7 @@ col[] start;
 
 Animation animation1;
 Animation animation2;
+Animation animation3;
 
 PImage lamp;
 
@@ -47,12 +48,12 @@ boolean state = false;
 void setup(){
    
   
+  //fullScreen();
   size(500,500);
-  
-  
+  noCursor();
   background(255,215,89);
    fill(0,4,68);
-  rect(0,height/2,width, height);
+  rect(0,height/2,width+20, height);
   
   minim = new Minim(this);
 
@@ -63,6 +64,7 @@ void setup(){
   frameRate(24);
   animation1 = new Animation("run", 6);
   animation2 = new Animation("run_transparent",6);
+  animation3 = new Animation("",7);
   
   systems = new ArrayList<ParticleSystem>();
   lamp = loadImage("lamp.png");
@@ -125,7 +127,7 @@ void draw(){
     
   background(255,215,89);
    fill(0,4,68);
-  rect(0,height/2,width, height);
+  rect(-10,height/2,width+20, height);
   
     ManEnter();
     EnterWhiteMan();
@@ -136,7 +138,7 @@ void draw(){
     
   background(255,215,89);
    fill(0,4,68);
-  rect(0,height/2,width, height);
+  rect(-10,height/2,width+20, height);
     MovingShapes();
     Intro();
     EnterWhiteMan();
@@ -146,7 +148,7 @@ void draw(){
      
   background(255,215,89);
    fill(0,4,68);
-  rect(0,height/2,width, height);
+  rect(-10,height/2,width+20, height);
   
      HeartbeatEffect();
      Intro();
@@ -156,7 +158,7 @@ void draw(){
    else if(stage == 4){
   background(255,215,89);
    fill(0,4,68);
-  rect(0,height/2,width, height);
+  rect(-10,height/2,width+20, height);
   EnterWhiteMan();
      ManEnter();
      Intro();
@@ -175,54 +177,54 @@ void draw(){
   
        
      if(rotationStep < 25){
-        background(225,193,152);
-   fill(0,255,159);
+        background(15,166,194);
+   fill(255,0,31);
        translate(width/2*2, 0);
-       rotate(radians(90));
+       rotate(radians(90));sun();
       }
-      else if(rotationStep > 25 && rotationStep < 50){
-         background(203,177,214);
-   fill(253,255,0);
+      else if(rotationStep > 25 && rotationStep < 75){
+         background(218,255,138);
+   fill(138,230,255);
     translate(width/2+ 250, height/2 + 250); 
         rotate(radians(180));
-        
+        sun();
      }
-      else if(rotationStep > 50 && rotationStep < 75){
-         background(251,0,0);
-   fill(173,188,221);
+      else if(rotationStep > 75 && rotationStep < 90){
+         background(255,2,160);
+   fill(0,87,13);
          translate(0, 500);
-      rotate(radians(270));
+      rotate(radians(270));sun();
      }
-     else if(rotationStep > 75 && rotationStep < 90){
-        background(240,224,208);
-   fill(0,255,236);
+     else if(rotationStep > 90 && rotationStep < 115){
+        background(144,208,240);
+   fill(248,176,160);
        translate(width/2*2, 0);
-       rotate(radians(45));
+       rotate(radians(90));sun();
       }
-       else if(rotationStep > 90 && rotationStep < 115){
-          background(0,255,159);
-   fill(243,180,197);
-        
-    translate(width/2+ 250, height/2 + 250); 
-        rotate(radians(180));
-        
-     }
-       else if(rotationStep > 115){
-          background(255,215,89);
+       else if(rotationStep > 115 && rotationStep < 135){
+         background(255,215,89);
    fill(0,4,68);
+        
+    translate(width/2+ 250, height/2 + 250); 
+        rotate(radians(180));
+        sun();
+     }
+       else if(rotationStep > 135){
+          background(255,177,109);
+   fill(45,23,77);
          translate(0, 500);
       rotate(radians(270));
+       textSize(25);
+      text("Presenting the croonies", 10, 30); 
      }
       
      
-  rect(0,height/2,width, height);
+  rect(-10,height/2,width+20, height);
   EnterWhiteMan();
      ManEnter();
-     Intro();
+     Intro(); 
      
-      
-     
-     
+
    }
   
 }

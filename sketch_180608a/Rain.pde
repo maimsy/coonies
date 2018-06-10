@@ -1,7 +1,7 @@
 
 void Rain(){
 cycle += 1; 
-  background(0);
+ 
   for (int j = 0; j<start.length; j++){
       start[j].disp();
   }

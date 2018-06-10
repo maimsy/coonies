@@ -44,7 +44,7 @@ void MovingShapes(){
   //translate(width/2, height/2);
   strokeWeight(4);
   // Draw a polygon that makes up all the vertices
-  for(int r = -1000; r < 1000; r += 100) {
+  for(int r = -1500; r < 1500; r += 100) {
 
   pushMatrix();
   translate(r,0);
