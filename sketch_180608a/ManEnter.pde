@@ -3,6 +3,9 @@ float animStep = -50;
 float lampStep = width+10;
 float manEndLocation = 0;
 
+int lastTime = 0;
+int delta =0;
+
 
 void ManEnter(){
   /*
@@ -55,12 +58,10 @@ void ManEnter(){
 void EnterWhiteMan(){ 
   animation2.display((width)-animStep-200, height/2 - 15);
 }
-int last ;
+ 
 void FallMan(){
-  last = millis();
   
-  println(animStep);
-  animation3.display(width/2, animStep);
+  animation3.display(50, 50+delta);
 }
 
 

@@ -133,7 +133,7 @@ void draw(){
   background(255,215,89);
    fill(0,4,68);
   rect(-10,height/2,width+20, height);
-  
+  //FallMan();
     ManEnter();
     EnterWhiteMan();
     Intro();
@@ -224,17 +224,20 @@ if(rotationStep < 25){
        text("Music using Sonic Pi and Code using Processing", 50, 50); 
        textSize(25);
        pour();
+       FallMan();
      }
       else if(rotationStep > 170){
         stage = 7;
       }
      
   rect(-10,height/2,width+20, height);
-  EnterWhiteMan();
+  
   
   if(rotationStep < 160){
      ManEnter();
+     EnterWhiteMan();
      Intro(); 
+     
   }
 
    }
@@ -243,6 +246,9 @@ if(rotationStep < 25){
   else if(stage == 7){
   exit();
   }
+  
+  delta = millis()- lastTime;
+  lastTime = millis();
 }
 
 int rotationStep = 0;
