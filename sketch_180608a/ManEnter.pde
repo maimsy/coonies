@@ -14,14 +14,15 @@ void ManEnter(){
     //stage = 5;
   }*/
   
-   animation1.display(animStep, height/2 - 90);
-   if(stage < 3){ manEndLocation = 50; }
+
+   animation1.display(animStep, height/2 - 260);
+   if(stage < 3){ manEndLocation = 150; }
    else{ 
      manEndLocation = (width/2)-60;
    }
    
     if(animStep < manEndLocation){
-      animStep += 1f;
+      animStep += 10f;
     } 
     /*else if(animStep >= width/2-50){
       println(stage);
@@ -52,7 +53,14 @@ void ManEnter(){
 
 
 void EnterWhiteMan(){ 
-  animation2.display((width-140)-animStep, height/2 - 5);
+  animation2.display((width)-animStep-200, height/2 - 15);
+}
+int last ;
+void FallMan(){
+  last = millis();
+  
+  println(animStep);
+  animation3.display(width/2, animStep);
 }
 
 
@@ -75,7 +83,7 @@ class Animation {
 
   void display(float xpos, float ypos) {
     frame = (frame+1) % imageCount;
-    image(images[frame], xpos, ypos, 150 ,120);
+    image(images[frame], xpos, ypos, 350 ,320);
   }
   
   int getWidth() {

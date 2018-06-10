@@ -1,11 +1,11 @@
 int movingShapes1Steps = width;
 void MovingShapes(){
   
-  if(movingShapes1Steps < -500 && movingShapes1Steps > -1200){
+  if(movingShapes1Steps < -200 && movingShapes1Steps > -500){
     stage = 3;
   }
   
-  if(movingShapes1Steps < -1200 ){
+  if(movingShapes1Steps < -500 ){
     println("stage "+stage);
     stage = 4;
   }
@@ -44,7 +44,7 @@ void MovingShapes(){
   //translate(width/2, height/2);
   strokeWeight(4);
   // Draw a polygon that makes up all the vertices
-  for(int r = -1500; r < 1500; r += 100) {
+  for(int r = -2000; r < 2000; r += 100) {
 
   pushMatrix();
   translate(r,0);
@@ -58,7 +58,9 @@ void MovingShapes(){
   for (PVector v : morph) {
     vertex(v.x + movingShapes1Steps, v.y+50);
   }
-  fill(random(255), random(255), random(255) );
+  
+      fill(random(255), random(255), random(255) );
+  
   
   endShape(CLOSE);
   

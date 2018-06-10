@@ -48,8 +48,8 @@ boolean state = false;
 void setup(){
    
   
-  //fullScreen();
-  size(500,500);
+  fullScreen();
+  //size(500,500);
   noCursor();
   background(255,215,89);
    fill(0,4,68);
@@ -64,7 +64,7 @@ void setup(){
   frameRate(24);
   animation1 = new Animation("run", 6);
   animation2 = new Animation("run_transparent",6);
-  animation3 = new Animation("",7);
+  animation3 = new Animation("fall",10);
   
   systems = new ArrayList<ParticleSystem>();
   lamp = loadImage("lamp.png");
@@ -132,6 +132,7 @@ void draw(){
     ManEnter();
     EnterWhiteMan();
     Intro();
+    //FallMan();
   }
   else if(stage == 2){
     //Rain();
@@ -175,58 +176,68 @@ void draw(){
    */
      
   
-       
-     if(rotationStep < 25){
+if(rotationStep < 25){
         background(15,166,194);
    fill(255,0,31);
-       translate(width/2*2, 0);
+       translate(width/2 + ((width/2)-80), 0);
        rotate(radians(90));sun();
       }
       else if(rotationStep > 25 && rotationStep < 75){
          background(218,255,138);
    fill(138,230,255);
-    translate(width/2+ 250, height/2 + 250); 
+    translate(650+width/2, height/2 + 350); 
         rotate(radians(180));
         sun();
      }
       else if(rotationStep > 75 && rotationStep < 90){
          background(255,2,160);
    fill(0,87,13);
-         translate(0, 500);
+         translate(80, height/2 + 400);
       rotate(radians(270));sun();
      }
      else if(rotationStep > 90 && rotationStep < 115){
         background(144,208,240);
    fill(248,176,160);
-       translate(width/2*2, 0);
+       translate(width-80, 0);
        rotate(radians(90));sun();
       }
        else if(rotationStep > 115 && rotationStep < 135){
          background(255,215,89);
    fill(0,4,68);
         
-    translate(width/2+ 250, height/2 + 250); 
+    translate(650+width/2, height/2 + 350); 
         rotate(radians(180));
         sun();
      }
        else if(rotationStep > 135){
           background(255,177,109);
    fill(45,23,77);
-         translate(0, 500);
+         translate(80, height/2 + 400);
       rotate(radians(270));
        textSize(25);
-      text("Presenting the croonies", 10, 30); 
+      text("Presenting the Coonies", 10, 50); 
+      textSize(25);
+       text("Music using Sonic Pi and Code using Processing", 50, 50); 
+       textSize(25);
      }
-      
+      else if(rotationStep > 160){
+        FallMan();
+      }
      
   rect(-10,height/2,width+20, height);
   EnterWhiteMan();
+  
+  if(rotationStep < 160){
      ManEnter();
      Intro(); 
-     
+  }
 
    }
+    
   
+  else if(stage == 7){
+  exit();
+  }
 }
 
 int rotationStep = 0;

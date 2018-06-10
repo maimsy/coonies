@@ -1,7 +1,7 @@
 
 
-float outsideRadius = 250;
-float insideRadius = 100;
+float outsideRadius = 300;
+float insideRadius = 250;
 
 int boxxStep = 0;
 
@@ -18,8 +18,8 @@ void boxx(){
   beginShape(TRIANGLE_STRIP); 
    
   for (int i = 0; i <= numPoints; i++) {
-    float px = x + cos(radians(angle)) * outsideRadius *boxxStep;
-    float py = y + sin(radians(angle)) * outsideRadius *boxxStep;
+    float px = x + cos(radians(angle)) * outsideRadius ;
+    float py = y + sin(radians(angle)) * outsideRadius ;
     angle += angleStep;
     fill(243,180,197);
     vertex(px, py);

@@ -5,7 +5,7 @@ void Intro(){
   fill(0);  
   
   if(step < width+10){
-    step += 8.0f;
+    step += 25.0f;
     
   }
   else{
