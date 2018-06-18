@@ -182,49 +182,56 @@ void draw(){
 if(rotationStep < 25){
         background(15,166,194);
    fill(255,0,31);
-       translate(width/2 + ((width/2)-80), 0);
-       rotate(radians(90));sun();
+       //translate(width/2 + ((width/2)-80), 0);
+       //rotate(radians(90));sun();
+       sun();
       }
       else if(rotationStep > 25 && rotationStep < 75){
          background(218,255,138);
    fill(138,230,255);
-    translate(650+width/2, height/2 + 350); 
-        rotate(radians(180));
+   // translate(650+width/2, height/2 + 350); 
+     //   rotate(radians(180));
         sun();
      }
       else if(rotationStep > 75 && rotationStep < 90){
          background(255,2,160);
    fill(0,87,13);
-         translate(80, height/2 + 400);
-      rotate(radians(270));sun();
+     //    translate(80, height/2 + 400);
+      //rotate(radians(270));
+      sun();
      }
-     else if(rotationStep > 90 && rotationStep < 115){
+     else if(rotationStep > 90 && rotationStep < 135){
         background(144,208,240);
    fill(248,176,160);
-       translate(width-80, 0);
-       rotate(radians(90));sun();
+     //  translate(width-80, 0);
+      // rotate(radians(90));
+      sun();
       }
-       else if(rotationStep > 115 && rotationStep < 135){
+    /*   else if(rotationStep > 115 && rotationStep < 135){
          background(255,215,89);
    fill(0,4,68);
         
-    translate(650+width/2, height/2 + 350); 
-        rotate(radians(180));
+   // translate(650+width/2, height/2 + 350); 
+     //   rotate(radians(180));
         sun();
-     }
+     }*/
        else if(rotationStep > 135){
           background(255,177,109);
-   fill(45,23,77);
-         translate(80, height/2 + 400);
-      rotate(radians(270));
-       textSize(25);
-      text("Presenting the Coonies", 10, 30); 
-  
+   noFill();
+   stroke(255,177,109);
+       //  translate(80, height/2 + 400);
+      //rotate(radians(270));
+       textSize(25); 
+      text("Presenting the Coonies", 10, 400); 
+  FallMan();
       textSize(25);
-       text("Music using Sonic Pi and Code using Processing", 50, 50); 
+       text("Music using Sonic Pi and", 5, 440); 
+       
        textSize(25);
+       text("Code using Processing", 10, 480); 
+       
        pour();
-       FallMan();
+       
      }
       else if(rotationStep > 170){
         stage = 7;
@@ -233,7 +240,7 @@ if(rotationStep < 25){
   rect(-10,height/2,width+20, height);
   
   
-  if(rotationStep < 160){
+  if(rotationStep < 100){
      ManEnter();
      EnterWhiteMan();
      Intro(); 

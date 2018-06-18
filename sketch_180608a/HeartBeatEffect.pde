@@ -16,6 +16,4 @@ void HeartbeatEffect()
 }
 
 
-void asterik(){
-
-}
+ 

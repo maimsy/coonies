@@ -1,7 +1,7 @@
 
 
-float outsideRadius = 300;
-float insideRadius = 250;
+float outsideRadius = 150;
+float insideRadius = 100;
 
 int boxxStep = 0;
 
