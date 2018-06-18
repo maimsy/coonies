@@ -48,8 +48,8 @@ boolean state = false;
 void setup(){
    
   
-  fullScreen();
-  //size(500,500);
+  //fullScreen();
+  size(500,500);
   noCursor();
   background(255,215,89);
    fill(0,4,68);
